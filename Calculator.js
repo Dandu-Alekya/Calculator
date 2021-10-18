@@ -40,5 +40,12 @@ function operate(a,b,operator){
 }
 
 function main(){
-    
+    let i=6;
+    while(i>0){
+    let num1=window.prompt("Enter the first number:");
+    let num2=window.prompt("Enter the second number:");
+    let operator=window.prompt("Enter the operand:");
+    operate(num1,num2,operator);
+    i--;
+    }
 }
