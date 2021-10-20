@@ -1,27 +1,27 @@
 function add(a,b){
-    console.log(a+b);
-    return a+b;
+    console.log(parseFloat(a)+parseFloat(b));
+    return parseFloat(a)+parseFloat(b);
 }
 
 function sub(a,b){
-    console.log(a-b);
-    return a-b;
+    console.log(parseFloat(a)-parseFloat(b));
+    return parseFloat(a)-parseFloat(b);
 }
 
 function mul(a,b){
-    console.log(a*b);
-    return a*b;
+    console.log(parseFloat(a)*parseFloat(b));
+    return parseFloat(a)*parseFloat(b);
 }
 
 function div(a,b){
-    console.log(a/b);
-    return a/b;
+    console.log(parseFloat(a)/parseFloat(b));
+    return parseFloat(a)/parseFloat(b);
 }
 
-function power(a,b){
+/*function power(a,b){
     console.log(Math.power(a,b));
     return Math.power(a,b);
-}
+}*/
 
 function display(x){
     console.log(x);
@@ -29,23 +29,24 @@ function display(x){
 
 function operate(a,b,operator){
     switch(operator){
-        case '+' : add(a,b); break;
-        case '-' : sub(a,b); break;
-        case '*' : mul(a,b); break;
-        case '/' : div(a,b); break;
-        case '^' : power(a,b); break;
+        case '+' : return add(a,b); 
+        case '-' : return sub(a,b); 
+        case '*' : return mul(a,b); 
+        case '/' : return div(a,b); 
+        case '^' : return power(a,b); 
         default: console.log("Wrong operand");
 
     }
 }
 
 function main(){
-    let i=6;
+    let i=4;
     while(i>0){
-    let num1=window.prompt("Enter the first number:");
-    let num2=window.prompt("Enter the second number:");
-    let operator=window.prompt("Enter the operand:");
-    operate(num1,num2,operator);
+    let num1=prompt("Enter the first number:");
+    let num2=prompt("Enter the second number:");
+    let operator=prompt("Enter the operand:");
+    let result=operate(num1,num2,operator);
+    //alert(result);
     i--;
     }
 }
