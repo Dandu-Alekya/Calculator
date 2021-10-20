@@ -1,9 +1,11 @@
-button{
+.row button{
     height: 100px;
     width: 100px;
     font-size: 40px;
     margin: 5px;
     background-color: #9ace9a;
-    border: 2px solid #67b668;
-    border-radius: 25px;
+    border: 2px solid  #56ae57;
+    border-radius: 50px;
+    text-align: center;
+    font-family: monospace;
 }
