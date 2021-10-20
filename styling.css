@@ -3,13 +3,22 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-size:100%;
+    /*background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm422-054-x.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=a276d1048db19a6342f9c82b1991f9c0);*/
+    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm422-047-x.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=16ea540dabc12e86960a8b74ab282c3f);
+    
 }
 .calculatorbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #cce7cd;
     padding: 20px;
-    width: 460px;
+    width: 455px;
     border: 3px solid  #56ae57;
-    border-radius: 4px;
+    border-radius: 10px;
 
 }
 .row button{
