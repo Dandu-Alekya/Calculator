@@ -1,6 +1,6 @@
 let currentdisplay=' ';
 
-let current = document.createElement("p");
+let current = document.querySelector('#screen');
 
 
 function add(a,b){
@@ -29,7 +29,7 @@ function div(a,b){
 }*/
 
 function display(x){
-    
+    current.textContent=x;
     console.log(x);
 }
 
@@ -45,7 +45,7 @@ function operate(a,b,operator){
     }
 }
 
-const buttons = document.querySelectorAll('.button');
+const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
       display(button.id);
@@ -53,7 +53,8 @@ buttons.forEach((button) => {
 });
 
 function main(){
-    let i=4;
+
+    /*let i=4;
     while(i>0){
     let num1=prompt("Enter the first number:");
     let num2=prompt("Enter the second number:");
@@ -61,5 +62,5 @@ function main(){
     let result=operate(num1,num2,operator);
     //alert(result);
     i--;
-    }
+    }*/
 }
