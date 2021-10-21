@@ -1,3 +1,8 @@
+let currentdisplay=' ';
+
+let current = document.createElement("p");
+
+
 function add(a,b){
     console.log(parseFloat(a)+parseFloat(b));
     return parseFloat(a)+parseFloat(b);
@@ -24,6 +29,7 @@ function div(a,b){
 }*/
 
 function display(x){
+    
     console.log(x);
 }
 
@@ -38,6 +44,13 @@ function operate(a,b,operator){
 
     }
 }
+
+const buttons = document.querySelectorAll('.button');
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+      display(button.id);
+  });
+});
 
 function main(){
     let i=4;
