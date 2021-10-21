@@ -3,12 +3,15 @@ let current = document.querySelector('#screen');
 
 
 function add(a,b){
-    console.log(parseFloat(a)+parseFloat(b));
+    //console.log(parseFloat(a)+parseFloat(b));
+    console.log(parseFloat(a));
+    console.log(parseFloat(b));
     return parseFloat(a)+parseFloat(b);
 }
 
 function sub(a,b){
-    console.log(parseFloat(a)-parseFloat(b));
+    console.log(parseFloat(a));
+    console.log(parseFloat(b));
     return parseFloat(a)-parseFloat(b);
 }
 
@@ -29,31 +32,34 @@ function div(a,b){
 
 function displayresult(x){
     current.textContent=x;
+    firstnumber=x;
+    console.log(firstnumber);
 }
 function display(x){
     if((x==="+" || x==="-" || x==='*' || x==='/' || x==='^')){
-        //console.log("inside operand");
+        console.log("inside operand");
         operand=x;
         current.textContent+=x;
         //console.log(x);
         f=1;
     }
     else if(f===1 && x!=='='){
-        //console.log("inside second");
+        console.log("inside second");
         current.textContent+=x;
         secondnumber=current.textContent;
         //console.log(secondnumber);
     }
     else if(f===0 && x!=='='){
-        //console.log("inside first");
+        console.log("inside first");
         current.textContent+=x;
         firstnumber=current.textContent;
         //console.log(firstnumber);
     }
     else if(x==='='){
-        //console.log("inside =");
+        console.log("inside =");
         //operate(firstnumber,secondnumber,operand);
         displayresult(operate(firstnumber,secondnumber,operand));
+        f=0;
     }
 }
 
