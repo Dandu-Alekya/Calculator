@@ -24,7 +24,7 @@ body{
 .row button{
     height: 40px;
     width: 60px;
-    font-size: 20px;
+    font-size: 17px;
     margin: 5px;
     background-color: #9ace9a;
     border: 2px solid  #56ae57;
@@ -34,12 +34,16 @@ body{
 }
 .operator:hover{
     background-color: #2a5527 !important;
-    border: 2px solid  #5c7e5c !important;
-    color:azure;
+    border: 2px solid  #709170 !important;
+    box-shadow: 0 5px 5px rgba(0, 46, 12, 0.658) !important;
 }
 .row button:hover{
     background-color: #56ae57;
-    border: 2px solid #9ace9a ;
+    border: 2px solid #9ace9a;
+    font-size: 20px;
+    color:azure;
+    box-shadow: 0 5px 5px rgba(39, 129, 61, 0.658);
+
 }
 .display p{
     height: 100px;
