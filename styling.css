@@ -32,11 +32,11 @@ body{
     text-align: center;
     font-family: monospace;
 }
-/*.operator{
-    background-color: #2e4d2c !important;
-    border: 2px solid  #c7fac2 !important;
+.operator:hover{
+    background-color: #2a5527 !important;
+    border: 2px solid  #5c7e5c !important;
     color:azure;
-}*/
+}
 .row button:hover{
     background-color: #56ae57;
     border: 2px solid #9ace9a ;
