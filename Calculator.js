@@ -1,6 +1,6 @@
 let firstnumber,secondnumber,result,operand,f=0;
 let current = document.querySelector('#screen');
-
+const screen = document.querySelector('.display');
 
 function add(a,b){
     //console.log(parseFloat(a)+parseFloat(b));
@@ -29,12 +29,15 @@ function div(a,b){
     console.log(Math.power(a,b));
     return Math.power(a,b);
 }*/
-
+let ans = document.createElement("p");
+ans.setAttribute('id','result')
 function displayresult(x){
-    current.textContent=x;
-    firstnumber=x;
-    console.log(firstnumber);
+    ans.textContent=x;
+    screen.append(ans);
+    //firstnumber=x;
+    //console.log(firstnumber);
 }
+
 function display(x){
     if((x==="+" || x==="-" || x==='*' || x==='÷' || x==='^')){
         console.log("inside operand");
@@ -89,8 +92,6 @@ function main(){
     let num1=prompt("Enter the first number:");
     let num2=prompt("Enter the second number:");
     let operator=prompt("Enter the operand:");
-    let result=operate(num1,num2,operator);
-    //alert(result);
     i--;
     }*/
 }

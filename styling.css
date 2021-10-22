@@ -45,12 +45,14 @@ body{
     box-shadow: 0 5px 5px rgba(39, 129, 61, 0.658);
 
 }
-.display p{
+.display{
     height: 100px;
     width: 250px;
     border: 2px solid  #56ae57;
     margin: 5px 5px 15px 5px;
-    padding: 10px;
-    text-align: right;
     background-color:#eef7ee;
+    padding: 10px;
+}
+.display p{
+    text-align: right;
 }
