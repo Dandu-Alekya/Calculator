@@ -50,6 +50,9 @@ function display(x){
         console.log("inside second");
         current.textContent+=x;
         secondnumber=current.textContent;
+        if(secondnumber===0){
+            displayresult("Cannot Divide by zero!");
+        }
         //console.log(secondnumber);
     }
     else if(f===0 && x!=='='){
