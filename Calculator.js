@@ -40,14 +40,14 @@ function displayresult(x){
 
 function display(x){
     if((x==="+" || x==="-" || x==='*' || x==='÷' || x==='^')){
-        console.log("inside operand");
+        //console.log("inside operand");
         operand=x;
         current.textContent+=x;
         //console.log(x);
         f=1;
     }
     else if(f===1 && x!=='='){
-        console.log("inside second");
+        //console.log("inside second");
         current.textContent+=x;
         secondnumber=current.textContent;
         if(secondnumber===0){
@@ -56,13 +56,13 @@ function display(x){
         //console.log(secondnumber);
     }
     else if(f===0 && x!=='='){
-        console.log("inside first");
+        //console.log("inside first");
         current.textContent+=x;
         firstnumber=current.textContent;
         //console.log(firstnumber);
     }
     else if(x==='='){
-        console.log("inside =");
+        //console.log("inside =");
         //operate(firstnumber,secondnumber,operand);
         displayresult(operate(firstnumber,secondnumber,operand));
         f=0;
