@@ -39,7 +39,7 @@ function displayresult(x){
 }
 
 function display(x){
-    if((x==="+" || x==="-" || x==='*' || x==='÷' || x==='^')){
+    if((x==="+" || x==="-" || x==='x' || x==='÷' || x==='^')){
         //console.log("inside operand");
         operand=x;
         current.textContent+=x;
@@ -73,7 +73,7 @@ function operate(a,b,operator){
     switch(operator){
         case '+' : return add(a,b); 
         case '-' : return sub(a,b); 
-        case '*' : return mul(a,b); 
+        case 'x' : return mul(a,b); 
         case '÷' : return div(a,b); 
         case '^' : return power(a,b); 
         default: console.log("Wrong operand");
