@@ -67,8 +67,15 @@ function display(x){
         displayresult(operate(firstnumber,secondnumber,operand));
         f=0;
     }
+    if(x=="AC"){
+        cleardisplay();
+    }
 }
 
+function cleardisplay(){
+    current.textContent="";
+    ans.remove();
+}
 function operate(a,b,operator){
     switch(operator){
         case '+' : return add(a,b); 
