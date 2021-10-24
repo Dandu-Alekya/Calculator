@@ -4,8 +4,6 @@ const screen = document.querySelector('.display');
 
 function add(a,b){
     //console.log(parseFloat(a)+parseFloat(b));
-    console.log(parseFloat(a));
-    console.log(parseFloat(b));
     return parseFloat(a)+parseFloat(b);
 }
 
@@ -40,39 +38,43 @@ function displayresult(x){
 
 function display(x){
     if((x==="+" || x==="-" || x==='x' || x==='÷' || x==='^')){
-        //console.log("inside operand");
+        console.log("inside operand");
         operand=x;
         current.textContent+=x;
-        //console.log(x);
+        console.log(x);
         f=1;
     }
     else if(f===1 && x!=='='){
-        //console.log("inside second");
+        console.log("inside second");
         current.textContent+=x;
         secondnumber=current.textContent;
         if(secondnumber===0){
             displayresult("Cannot Divide by zero!");
         }
-        //console.log(secondnumber);
+        console.log(secondnumber);
     }
     else if(f===0 && x!=='='){
-        //console.log("inside first");
+        console.log("inside first");
         current.textContent+=x;
         firstnumber=current.textContent;
-        //console.log(firstnumber);
+        console.log(firstnumber);
     }
     else if(x==='='){
         //console.log("inside =");
         //operate(firstnumber,secondnumber,operand);
+        console.log(parseFloat(firstnumber));
+        console.log(parseFloat(secondnumber));
         displayresult(operate(firstnumber,secondnumber,operand));
-        f=0;
     }
-    if(x=="AC"){
+    else if(x=="AC"){
         cleardisplay();
     }
 }
 
 function cleardisplay(){
+    firstnumber="";
+    operand="";
+    secondnumber="";
     current.textContent="";
     ans.remove();
 }
