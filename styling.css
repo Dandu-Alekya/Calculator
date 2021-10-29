@@ -62,3 +62,10 @@ body{
 .display p{
     text-align: right;
 }
+
+footer{
+    height: 30px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
