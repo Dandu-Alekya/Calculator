@@ -62,7 +62,15 @@ body{
 .display p{
     text-align: right;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
+a:hover{
+    font-weight: bolder;
+    color: #ee6c4d;
+}
 footer{
     height: 30px;
     position:absolute;
