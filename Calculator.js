@@ -91,6 +91,7 @@ function operate(a,b,operator){
 }
 
 const buttons = document.querySelectorAll('button');
+
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
       display(button.id);
@@ -98,7 +99,6 @@ buttons.forEach((button) => {
 });
 
 function main(){
-
     /*let i=4;
     while(i>0){
     let num1=prompt("Enter the first number:");
