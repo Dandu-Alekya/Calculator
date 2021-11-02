@@ -7,6 +7,7 @@ const operators = document.querySelectorAll('.operator');
 let equals = document.querySelector('.equal');
 let clear = document.querySelector('.clear');
 let del = document.querySelector('.delete');
+let pi = document.querySelector('.pi');
 
 numbuttons.forEach((num)=>{
     num.addEventListener('click', ()=>{
@@ -33,9 +34,12 @@ clear.addEventListener('click',()=>{
 });
 
 del.addEventListener('click',()=>{
-    console.log("del");
     deletenum();
 
+});
+
+pi.addEventListener('click',()=>{
+    setnum(pi.id);
 });
 
 function setnum(number){
