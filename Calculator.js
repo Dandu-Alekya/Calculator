@@ -26,7 +26,6 @@ equals.addEventListener('click',()=>{
     console.log(secondnumber);
     console.log(operator);
     displayresult(operate(firstnumber,secondnumber,operator));
-    f=0;
 });
 
 clear.addEventListener('click',()=>{
@@ -47,6 +46,7 @@ decimal.addEventListener('click',()=>{
 });
 
 function setnum(number){
+    //console.log(f);
     current.textContent+=number;
     if(number==='.'){
         decimal.disabled=true;
@@ -63,7 +63,6 @@ function setoperator(x){
     operator=x;
     current.textContent+=x;
     decimal.disabled=false;
-    //console.log(x);
     f=1;
 }
 
@@ -73,6 +72,7 @@ ans.setAttribute('id','result')
 function displayresult(x){
     ans.textContent=x;
     screen.append(ans);
+    f=0;
 }
 
 function cleardisplay(){
@@ -85,7 +85,7 @@ function cleardisplay(){
 }
 
 function deletenum(){
-    console.log("inside del");
+    //console.log("inside del");
     if(f===0){
         firstnumber=firstnumber.slice(0,-1);
         current.textContent= current.textContent.slice(0,-1);
