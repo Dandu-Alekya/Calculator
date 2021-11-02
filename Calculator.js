@@ -1,26 +1,34 @@
-let firstnumber='',secondnumber='',result='',operand,f=0;
+let firstnumber='',secondnumber='',result='',operator,f=0;
 let current = document.querySelector('#screen');
+current.textContent=" ";
 const screen = document.querySelector('.display');
 const numbuttons = document.querySelectorAll('.num');
-const operators = document.querySelectorAll('operator');
+const operators = document.querySelectorAll('.operator');
 let equals = document.querySelector('.equal');
 numbuttons.forEach((num)=>{
-    num.addEventListener('click', displaynum(num.id));
+    num.addEventListener('click', ()=>{
+        //console.log("hiii");
+        displaynum(num.id);
+    });
 });
 
 operators.forEach((op)=>{
     op.addEventListener('click', ()=>{
-        console.log("hi");
-        displayoperand(op.id);
+        //console.log("hi");
+        displayoperator(op.id);
     });
 });
 
 equals.addEventListener('click',()=>{
-    displayresult(operate(firstnumber,secondnumber,operand));
+    console.log(firstnumber);
+    console.log(secondnumber);
+    console.log(operator);
+    displayresult(operate(firstnumber,secondnumber,operator));
     f=0;
 });
+
 function displaynum(number){
-    current.textContent=" ";
+    //console.log("hi num");
     current.textContent+=number;
     if(f===0){
         firstnumber+=number;
@@ -30,8 +38,8 @@ function displaynum(number){
     }
 }
 
-function displayoperand(x){
-        operand=x;
+function displayoperator(x){
+        operator=x;
         current.textContent+=x;
         console.log(x);
         f=1;
