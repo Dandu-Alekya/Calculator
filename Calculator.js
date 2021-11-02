@@ -1,32 +1,48 @@
-let firstnumber,secondnumber,result,operand,f=0;
+let firstnumber='',secondnumber='',result='',operand,f=0;
 let current = document.querySelector('#screen');
 const screen = document.querySelector('.display');
+const numbuttons = document.querySelectorAll('.num');
+const operators = document.querySelectorAll('operator');
+let equals = document.querySelector('.equal');
+numbuttons.forEach((num)=>{
+    num.addEventListener('click', displaynum(num.id));
+});
 
-function add(a,b){
-    //console.log(parseFloat(a)+parseFloat(b));
-    return parseFloat(a)+parseFloat(b);
+operators.forEach((op)=>{
+    op.addEventListener('click', ()=>{
+        console.log("hi");
+        displayoperand(op.id);
+    });
+});
+
+equals.addEventListener('click',()=>{
+    displayresult(operate(firstnumber,secondnumber,operand));
+    f=0;
+});
+function displaynum(number){
+    current.textContent=" ";
+    current.textContent+=number;
+    if(f===0){
+        firstnumber+=number;
+    }
+    else{
+        secondnumber+=number;
+    }
 }
 
-function sub(a,b){
-    console.log(parseFloat(a));
-    console.log(parseFloat(b));
-    return parseFloat(a)-parseFloat(b);
+function displayoperand(x){
+        operand=x;
+        current.textContent+=x;
+        console.log(x);
+        f=1;
 }
 
-function mul(a,b){
-    console.log(parseFloat(a)*parseFloat(b));
-    return parseFloat(a)*parseFloat(b);
-}
+/*buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+      display(button.id);
+  });
+});*/
 
-function div(a,b){
-    console.log(parseFloat(a)/parseFloat(b));
-    return parseFloat(a)/parseFloat(b);
-}
-
-/*function power(a,b){
-    console.log(Math.power(a,b));
-    return Math.power(a,b);
-}*/
 let ans = document.createElement("p");
 ans.setAttribute('id','result')
 function displayresult(x){
@@ -35,7 +51,7 @@ function displayresult(x){
     //firstnumber=x;
     //console.log(firstnumber);
 }
-
+/*
 function display(x){
     if((x==="+" || x==="-" || x==='x' || x==='÷' || x==='^')){
         console.log("inside operand");
@@ -70,6 +86,7 @@ function display(x){
         cleardisplay();
     }
 }
+*/
 
 function cleardisplay(){
     firstnumber="";
@@ -78,32 +95,37 @@ function cleardisplay(){
     current.textContent="";
     ans.remove();
 }
+
 function operate(a,b,operator){
     switch(operator){
         case '+' : return add(a,b); 
         case '-' : return sub(a,b); 
         case 'x' : return mul(a,b); 
-        case '÷' : return div(a,b); 
+        case '÷' : if(b===0) return null;
+                    else return div(a,b); 
         case '^' : return power(a,b); 
-        default: console.log("Wrong operand");
+        default: console.log("Wrong operator");
 
     }
 }
 
-const buttons = document.querySelectorAll('button');
+function add(a,b){
+    //console.log(parseFloat(a)+parseFloat(b));
+    return parseFloat(a)+parseFloat(b);
+}
 
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-      display(button.id);
-  });
-});
+function sub(a,b){
+    return parseFloat(a)-parseFloat(b);
+}
 
-function main(){
-    /*let i=4;
-    while(i>0){
-    let num1=prompt("Enter the first number:");
-    let num2=prompt("Enter the second number:");
-    let operator=prompt("Enter the operand:");
-    i--;
-    }*/
+function mul(a,b){
+    return parseFloat(a)*parseFloat(b);
+}
+
+function div(a,b){
+    return parseFloat(a)/parseFloat(b);
+}
+
+function power(a,b){
+    return Math.pow(parseFloat(a),parseFloat(b));
 }
