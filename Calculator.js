@@ -1,4 +1,4 @@
-let firstnumber='',secondnumber='',result='',operator,f=0;
+let firstnumber='',secondnumber='',result='',operator='',f=0;
 let current = document.querySelector('#screen');
 current.textContent=" ";
 const screen = document.querySelector('.display');
@@ -6,15 +6,17 @@ const numbuttons = document.querySelectorAll('.num');
 const operators = document.querySelectorAll('.operator');
 let equals = document.querySelector('.equal');
 let clear = document.querySelector('.clear');
+let del = document.querySelector('.delete');
+
 numbuttons.forEach((num)=>{
     num.addEventListener('click', ()=>{
-        displaynum(num.id);
+        setnum(num.id);
     });
 });
 
 operators.forEach((op)=>{
     op.addEventListener('click', ()=>{
-        displayoperator(op.id);
+        setoperator(op.id);
     });
 });
 
@@ -30,8 +32,13 @@ clear.addEventListener('click',()=>{
     cleardisplay();
 });
 
+del.addEventListener('click',()=>{
+    console.log("del");
+    deletenum();
 
-function displaynum(number){
+});
+
+function setnum(number){
     current.textContent+=number;
     if(f===0){
         firstnumber+=number;
@@ -41,21 +48,16 @@ function displaynum(number){
     }
 }
 
-function displayoperator(x){
-        operator=x;
-        current.textContent+=x;
-        console.log(x);
-        f=1;
+function setoperator(x){
+    operator=x;
+    current.textContent+=x;
+    //console.log(x);
+    f=1;
 }
-
-/*buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-      display(button.id);
-  });
-});*/
 
 let ans = document.createElement("p");
 ans.setAttribute('id','result')
+
 function displayresult(x){
     ans.textContent=x;
     screen.append(ans);
@@ -69,6 +71,17 @@ function cleardisplay(){
     ans.remove();
 }
 
+function deletenum(){
+    console.log("inside del");
+    if(f===0){
+        firstnumber=firstnumber.slice(0,-1);
+        current.textContent= current.textContent.slice(0,-1);
+    }
+    else if(f===1){
+        secondnumber = secondnumber.slice(0,-1);
+        current.textContent= current.textContent.slice(0,-1);
+    }
+}
 function operate(a,b,operator){
     switch(operator){
         case '+' : return add(a,b); 
