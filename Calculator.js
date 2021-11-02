@@ -8,7 +8,7 @@ let equals = document.querySelector('.equal');
 let clear = document.querySelector('.clear');
 let del = document.querySelector('.delete');
 let pi = document.querySelector('.pi');
-
+let decimal = document.querySelector('.decimal');
 numbuttons.forEach((num)=>{
     num.addEventListener('click', ()=>{
         setnum(num.id);
@@ -42,8 +42,15 @@ pi.addEventListener('click',()=>{
     setnum(pi.id);
 });
 
+decimal.addEventListener('click',()=>{
+    setnum(decimal.id);
+});
+
 function setnum(number){
     current.textContent+=number;
+    if(number==='.'){
+        decimal.disabled=true;
+    }
     if(f===0){
         firstnumber+=number;
     }
@@ -55,6 +62,7 @@ function setnum(number){
 function setoperator(x){
     operator=x;
     current.textContent+=x;
+    decimal.disabled=false;
     //console.log(x);
     f=1;
 }
@@ -72,6 +80,7 @@ function cleardisplay(){
     operator="";
     secondnumber="";
     current.textContent="";
+    decimal.disabled=false;
     ans.remove();
 }
 
