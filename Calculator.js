@@ -95,6 +95,7 @@ function cleardisplay(){
     current.textContent="";
     decimal.disabled=false;
     ans.remove();
+    error.remove();
     f2=0;
 }
 
@@ -108,14 +109,17 @@ function deletenum(){
         secondnumber = secondnumber.slice(0,-1);
         current.textContent= current.textContent.slice(0,-1);
     }
+    error.remove();
 }
 function operate(a,b,operator){
     switch(operator){
         case '+' : return add(a,b); 
         case '-' : return sub(a,b); 
         case 'x' : return mul(a,b); 
-        case '÷' : if(b===0) return null;
-                    else return div(a,b); 
+        case '÷' : if(b==='0') 
+                        return displayerror(); 
+                    else 
+                        return div(a,b); 
         case '^' : return power(a,b); 
         default: return null //console.log("Wrong operator");
 
@@ -140,4 +144,11 @@ function div(a,b){
 
 function power(a,b){
     return Math.pow(parseFloat(a),parseFloat(b));
+}
+
+let error = document.createElement("p");
+error.setAttribute('id','error_message')
+function displayerror(){
+    screen.append(error);
+    error.textContent="Error-Cannot divide by Zero";
 }
