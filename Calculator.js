@@ -1,4 +1,4 @@
-let firstnumber='',secondnumber='',result='',operator='',f=0;
+let firstnumber='',secondnumber='',result='',operator='',f=0,f2=0;
 let current = document.querySelector('#screen');
 current.textContent=" ";
 const screen = document.querySelector('.display');
@@ -60,10 +60,23 @@ function setnum(number){
 }
 
 function setoperator(x){
+    if(f2===1){
+        console.log("direct");
+        console.log(firstnumber);
+        console.log(secondnumber);
+        console.log(operator);
+        displayresult(operate(firstnumber,secondnumber,operator));
+        firstnumber=ans.textContent;
+        secondnumber="";
+        current.textContent=ans.textContent;
+        ans.remove();
+        f2=0;
+    }
     operator=x;
     current.textContent+=x;
     decimal.disabled=false;
     f=1;
+    f2=1;
 }
 
 let ans = document.createElement("p");
@@ -82,6 +95,7 @@ function cleardisplay(){
     current.textContent="";
     decimal.disabled=false;
     ans.remove();
+    f2=0;
 }
 
 function deletenum(){
